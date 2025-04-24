@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TimSells – Reselling</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      color: #e0e0e0;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background-image: radial-gradient(circle at center, rgba(2,208,88,0.15) 0%, transparent 60%);
+      animation: pulseBg 10s infinite ease-in-out;
+      z-index: -1;
+    }
+
+    @keyframes pulseBg {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    del{
+      color: #888;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar .logo img {
+      height: 50px;
+    }
+
+    .navbar .name {
+      font-size: 1.8rem;
+      color: #0088ff;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 1.5rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      color: #0088ff;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #ccc;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .products {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .product {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 0 25px rgba(0, 255, 136, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .product h3 {
+      color: #0088ff;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .product p {
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+
+    .product .price {
+      color: #00eaff;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #00ffcc;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-top: 1rem;
+      box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #00e6b8;
+      color: #000;
+    }
+
+    .contact, footer {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    footer {
+      background-color: rgba(0,0,0,0.4);
+      backdrop-filter: blur(6px);
+      color: #888;
+    }
+
+    footer a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <img src="logo2nbgbig.png" alt="Logo">
+    </div>
+    
+  </div>
+
+  <section class="hero">
+    <h1>Startujesz z resellingiem?</h1>
+    <p>
+      Nazywam się Tymek i przygotowałem dla ciebie materiały, które pokażą ci, jak wziąć się za reselling. <br>Z doświadczenia wiem, że nie jest to tak skomplikowane jak suszą o tym „profesjonaliści”. 
+      Do stworzenia tych paczek dokumentów użyłem swojego doświadczenia w tej branży, analizy błędów które popełniałem i umiejetnosci które zdobyłem na przestrzeni czasu. Skoro udało się mnie, to dlaczego tobie ma nie wyjść? Stwierdziłem, że swoje już osiągnąłem i czas pomóc innym, zainteresowanym tym tematem. Jeśli chcesz zacząć z tego typu metodą, ale nie wiesz jak, te paczki stworzyłem z myślą o tobie. 
+    </p>
+  </section>
+
+  <div class="products">
+    <div class="product">
+      <h3>E-book - Sposób na reselling w 2025</h3>
+      <p> Zbiór informacji dla początkujących resellerów,
+        bez owijania w bawełnę, wszystko co potrzebne ci aby zacząć przygodę!
+        Znajdziesz tu m.in. informacje o tym jakie są opłacalne produkty w 2025, 
+        jak używać agentów, jak zrobić dobrą, wybijającą się ofertę, jak nie spalić się przed 
+        klientem, jak wyglądają kwestie legalności i prawnego bezpieczeństwa, jak wyglądają 
+        najlepsze strategie resellingowe. </p>
+      <div class="price"><del>59,99 PLN</del> 39,99 PLN</div>
+      <a href="ebook.html" class="btn">Kup teraz</a>
+    </div>
+    <div class="product">
+      <h3>Generator Fejkowych Paragonów</h3>
+      <p>Wyłącznie do zabawy – tworzy realistycznie wyglądające paragony.</p>
+      <div class="price"><del>49,99 PLN</del> 29,99 PLN</div>
+      <a href="paragony.html" class="btn">Kup teraz</a>
+    </div>
+    <div class="product">
+      <h3>Lista najlepszych sellerów</h3>
+      <p>Lista z albumami yupoo – sprawdzeni i godni zaufania dostawcy.
+        <br> Kupisz od nich za pośrednictwem agenta.</p>
+      <div class="price"><del>29,99 PLN</del> 15,99 PLN</div>
+      <a href="sellerzy.html" class="btn">Kup teraz</a>
+    </div>
+    <div class="product">
+      <h3>Szablony Wiadomości</h3>
+      <p>Gotowe wiadomości do klienta – profesjonalne, zwięzłe i przydatne w każdej sytuacji.
+        <br>Do kopiowania i edycji we własnym zakresie.
+      </p>
+      <div class="price"><del>19,99 PLN</del> 9,99 PLN</div>
+      <a href="wiadomosci.html" class="btn">Kup teraz</a>
+    </div>
+  </div>
+
+  <div class="contact">
+    <h2>BEZ STRESU - ZGODNIE Z REGULAMINEM</h2>
+    <p>mam obowiązek dostarczyć ci zakupione pliki.<br>
+      W przypadku błędu w automatycznym systemie zgłoś się do mnie mailowo!
+    </p>
+    <strong>Więcej w Regulaminie Timsell</strong>
+  </div>
+
+  <div class="contact">
+    <h2>MASZ PYTANIE?
+    </h2>
+    <p>Śmiało pisz – jako mój klient masz dostęp do prywatnego kontaktu:</p>
+    
+    <p>
+      📧 <strong>Email:</strong> tymoteusz.kaleta01@gmail.com<br>
+      💬 <strong>Discord:</strong> kaletkaa15
+    </p>
+  </div>
+
+  <footer>
+    <p><a href="REGULAMIN TIMSELL.pdf">Zapoznaj się z regulaminem</a></p>
+  </footer>
+</body>
+</html>

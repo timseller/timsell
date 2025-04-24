@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Podsumowanie zakupu – TimSells</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #00040f 0%, #000000 50%, #00051a 100%);
+    color: #e5e5e5;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: #0d0d0d;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 136, 255, 0.4); /* niebieski glow */
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(0, 136, 255, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      color: #0088ff;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .summary {
+      background-color: #0d0d0d;
+      border: 1px solid #1a1a1a;
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .summary span {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .summary strong {
+      color: #ffffff;
+    }
+
+    .payment-methods {
+      margin-bottom: 2rem;
+    }
+
+    .payment-methods label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background-color: #111827;
+      border: 1px solid #1f2937;
+      padding: 0.9rem 1rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .payment-methods label:hover {
+      background-color: #1f2937;
+    }
+
+    .payment-methods input[type="radio"] {
+      transform: scale(1.2);
+    }
+
+    .payment-methods img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+
+    .checkbox {
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .checkbox input {
+      margin-right: 0.5rem;
+      transform: scale(1.1);
+    }
+
+    .checkbox a {
+      color: #0088ff;
+      text-decoration: none;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 1rem;
+      background: #0088ff;
+      border: none;
+      border-radius: 14px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 136, 255, 0.3);
+    }
+
+    .btn:hover:enabled {
+      background: #0072d1;
+    }
+
+    .btn:disabled {
+      background-color: #333;
+      color: #777;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #0088ff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding: 1.5rem;
+      }
+
+      .btn {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Podsumowanie Zakupu</h1>
+
+    <div class="summary">
+      <span>Produkt: <strong>Szablony Wiadomości</strong></span>
+      <span>Suma: <strong>9,99 PLN</strong></span>
+      <br>
+      <span>Dostępne metody płatności:</span>
+    </div>
+
+    <div class="payment-methods">
+      <label><input type="radio" name="payment"> <img src="apple.png" alt="Apple Pay" /> Apple Pay</label>
+      <label><input type="radio" name="payment"> <img src="google.png" alt="Google Pay" /> Google Pay</label>
+      <label><input type="radio" name="payment"> <img src="blik.jpg" alt="BLIK" /> BLIK</label>
+      <label><input type="radio" name="payment"> <img src="karta.jpg" alt="Karta" /> Karta płatnicza</label>
+      <h6>*APPLE PAY I GOOGLE PAY TYLKO NA OBSŁUGIWANYCH URZĄDZENIACH</h6>
+    </div>
+  
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="acceptRules" />
+        Akceptuję <b><a href="REGULAMIN TIMSELL.pdf" target="_blank">regulamin</a></b>
+      </label>
+      <br><br>
+     
+     <p>Płatność odbywa się poprzez Stripe dla bezpieczeństwa danych.</p>
+     <p>Klikając "Kupuję" zgadzasz się z <b><a href="https://stripe.com/cookies-policy/legal" target="_blank"
+      >polityką cookies.</a></b></p>
+    </div>
+
+    <a href="https://buy.stripe.com/8wM9BZ7yRcM3eiscMM" target="_blank">
+      <button class="btn" id="buyBtn" disabled>Kupuję!</button>
+    </a>
+  </div>
+
+  <footer>
+    <p><a href="index.html">Powrót do strony głównej</a></p>
+  </footer>
+
+  <script>
+    const checkbox = document.getElementById('acceptRules');
+    const buyBtn = document.getElementById('buyBtn');
+
+    checkbox.addEventListener('change', () => {
+      buyBtn.disabled = !checkbox.checked;
+    });
+  </script>
+
+</body>
+</html>
